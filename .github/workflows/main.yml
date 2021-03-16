@@ -1,0 +1,9 @@
+name: build latex
+on: [push]
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build
+        uses: ./
