@@ -1,0 +1,5 @@
+name: makecv
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
