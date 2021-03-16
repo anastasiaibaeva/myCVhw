@@ -12,5 +12,5 @@ jobs:
       - name: upload pdf
         uses: actions/upload-artifact@v2
         with:
-          name: my_res
-          path: myCV/my_res.pdf
+          name: res
+          path: main.pdf
