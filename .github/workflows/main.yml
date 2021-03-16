@@ -5,5 +5,12 @@ jobs:
   build_latex:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v2
       - name: build
         uses: ./
+      - name: upload pdf
+        uses: actions/upload-artifacr@v2
+        with:
+          name: my_res
+          path: myCV/my_res.pdf
