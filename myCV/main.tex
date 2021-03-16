@@ -1,0 +1,103 @@
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+							
+\usepackage[english, russian]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}
+	\textheight=700px                    % Saving trees ;-)
+\usepackage{url}
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{%			            % Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{1pt}}
+
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+                \Huge \hfill #1
+                \par \normalsize \normalfont}
+		
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+		\large \usefont\hfill \textit{#1}
+		\par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}		       % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value	
+		
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % Study
+		\colorbox{White}{%
+			\parbox{5cm}{%
+			\hfill\color{Black}#2}} \par  % Duration
+		\noindent \textit{#3} \par        % School
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\noindent\colorbox{Black}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+
+\begin{document}
+
+\MyName{Ибаева Анастасия}
+
+\NewPart{Personal info}{}
+\textbf{Имя:} Ибаева Анастасия \newline
+\textbf{Address:} 1949 E University Drive, Tempe, AZ \newline
+\textbf{Телефон:} +7 926 893 65 16 \newline
+\textbf{email:}stacywerd@gmail.com \newline
+\textbf{День рождения} 11.12.2000 \newline
+\textbf{github}anastasiaibaeva \newline
+
+\NewPart{Education}{}
+
+\EducationEntry{Высшая школа экономики}{2019-2023}{Прикладная математика и информатика}
+
+
+\NewPart{Expirience}{}
+\EducationEntry{Ассистент по дискретной математике}{2020}{\begin{itemize}
+  \item Проводила консультации и отвечала на вопросы
+  \item Проверяла домашние задания
+  \item Принимала коллоквиум
+\end{itemize}}
+
+\EducationEntry{Репетитор по математике}{2019-2021}{\begin{itemize}
+  \item Готовлю школьников к ОГЭ и ЕГЭ
+  \item Помогаю устранить пробелы по школьным знаниям
+\end{itemize}}
+
+\NewPart{Personal skills}{}
+
+\SkillsEntry{Languages}{Русский (родной)}
+\SkillsEntry{}{Английский (B2)}
+
+\SkillsEntry{Else}{C, С++, Assembly, Python, Shell, Latex}
+
+\end{document}
